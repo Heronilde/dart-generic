@@ -27,7 +27,7 @@ final class GenericUpdateSuccess<T> extends GenericState<T> {}
 
 // Estado de sucesso ao carregar um item genérico
 final class GenericLoadSuccess<T> extends GenericState<T> {
-  final T item; // Agora genérico
+  final T? item; // Agora genérico
   const GenericLoadSuccess({required this.item});
 }
 

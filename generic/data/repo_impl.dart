@@ -49,9 +49,9 @@ class RepoImpl<T> implements GenericRepository<T> {
   }
 
   @override
-  Future<Either<Failure, void>?> update(String id, T item) async {
+  Future<Either<Failure, void>?> update(T item) async {
     try {
-      return right(await _dataSource.update(id, item));
+      return right(await _dataSource.update(item));
     } on ApiException catch (e) {
       return left(ApiFailure(status: e.statuscode, message: e.message));
     }

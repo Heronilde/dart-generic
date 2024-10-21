@@ -8,18 +8,18 @@ sealed class GenericEvent<T> extends Equatable {
 }
 
 // Evento de carregamento genérico
-final class LoadItemEvent<T> extends GenericEvent<T> {
+final class GenericGetItemEvent<T> extends GenericEvent<T> {
   final String id; // ID do item a ser carregado
-  const LoadItemEvent({required this.id});
+  const GenericGetItemEvent({required this.id});
 
   @override
   List<Object?> get props => [id];
 }
 
 // Evento de criação genérica
-final class CreateItemEvent<T> extends GenericEvent<T> {
+final class GenericCreateItemEvent<T> extends GenericEvent<T> {
   final T item;
-  const CreateItemEvent({required this.item});
+  const GenericCreateItemEvent({required this.item});
 
   @override
   List<Object?> get props => [item];
